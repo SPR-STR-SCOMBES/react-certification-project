@@ -5,7 +5,7 @@ export function fetchCategories() {
     return axios.get(ROUTES?.API?.TRIVIA?.API_CATEGORIES)
 }
 
-export function fetchQuestions(amount = 5, category, difficulty, type) {
+export function fetchQuestions(amount = 5, category, difficulty, type = 'multiple') {
     return axios.get(ROUTES?.API?.TRIVIA?.API_QUESTIONS, {
         params: {
             amount: amount,

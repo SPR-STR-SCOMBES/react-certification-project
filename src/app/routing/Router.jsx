@@ -9,9 +9,9 @@ import { resultAvailableGuard } from '@/app/routing/guards/resultAvailable'
 import { useQuiz } from '@/hooks/useQuiz'
 
 export default function Router()  {
-    const { questions, isResultAvailable } = useQuiz()
+    const { isResultAvailable } = useQuiz()
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={ import.meta.env.VITE_BASE_URL }>
             <Routes>
                 <Route index path={ ROUTES?.FRONT?.QUIZ_MAKER } element={ <QuizPage/> }/>
                 <Route path={ ROUTES?.FRONT?.QUIZ_RESULT } element={

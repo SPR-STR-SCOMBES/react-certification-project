@@ -23,10 +23,8 @@ export default function QuizProvider({ children }) {
 
     function initQuestions() {
         dispatch(buildQuestions({
-            amount: 5,
             category: state?.selectedCategory?.id,
-            difficulty: state?.selectedDifficulty?.VALUE,
-            type: 'multiple'
+            difficulty: state?.selectedDifficulty?.VALUE
         }))
     }
 
