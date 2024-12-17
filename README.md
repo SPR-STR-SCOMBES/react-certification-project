@@ -3,6 +3,7 @@
 ### Préambule
 
 Ce document a pour objectifs de présenter la solution développée, d'expliquer les “grandes étapes” réalisées et de justifier certains choix d'implémentation.
+L'application est disponnible via l'URL suivante : https://spr-str-scombes.github.io/react-certification-project
 
 ### IDE & Déploiement
 
@@ -358,3 +359,11 @@ D'autres composants réutilisés plusieurs fois permettent de simplifier et d'al
 *   Question : représente une question lors du remplissage du quizz avec sa phrase et ses réponses possibles sous forme de boutons
 *   Answer : représente une question lors de l'affichage du résultat avec sa phrase et ses réponses stylisées selon leur état (correcte/incorrecte)
 *   Score : affiche le score de l'utilisateur sur l'écran de resultat
+
+### Notes
+
+*   N'ayant pas vu de précision à ce sujet, l'utilisateur peut saisir plusieurs réponses à chaque question. Dans ce cas même si la réponse correcte est sélectionnée, elle sera considérée comme fausse pour éviter qu'un utilisateur sélectionne toutes les réponses à toutes les questions pour avoir 5/5.
+*   Le bouton "précédent" du navigateur permet de passer de la page "résultat" à la page "quizz" et donc de modifier ses réponses en fonction de la correction affichée. Ce comportement volontaire pour faciliter les vérifications mais devrait être modifié dans un contexte "réel"
+*   La garde "resultAvailable" avait pour objectif initial d'empêcher un utilisateur de naviguer grâce à l'URL vers la page de résultat avant d'avoir saisi toutes ses réponses. Cette fonctionnalité n'est pas testable via Github Pages car le routage côté client n'est pas géré et Github Pages ne sert que des fichiers statiques.
+*   Les composants "Button" et "Select" auraient pu être descendu à au niveau "global" de l'application puisque ces composants pourraient être utilisés dans d'autres circonstances par d'autres features
+*   La configuration labels.js pourrait être améliorée/refactorisée notamment pour en extraire les configurations liées aux "FIELDS" des formulaires
